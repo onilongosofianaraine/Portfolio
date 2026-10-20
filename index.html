@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="en" class="dark __variable_f910ec __variable_9a4aa5">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sofia Naraine J. Onilongo — Computer Engineering Student</title>
+  <meta name="description" content="Portfolio of Sofia Naraine J. Onilongo, 4th Year BS Computer Engineering student at ICCT Colleges. Passionate about technology, programming, and problem-solving." />
+  <link rel="icon" type="image/png" href="avatar-sketch.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sofia Naraine J. Onilongo — Portfolio" />
+  <meta property="og:description" content="4th Year BS Computer Engineering student at ICCT Colleges passionate about technology, programming, and problem-solving." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="avatar-sketch.png" />
+
+  <!-- Fonts & Stylesheet -->
+  <link rel="preload" href="silk-flower.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@variable&display=swap" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Pixelify+Sans:wght@400..700&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    @font-face {
+      font-family: 'Silk Flower';
+      src: url('silk-flower.woff2') format('woff2'),
+           url('silk-flower.ttf') format('truetype'),
+           url('https://db.onlinewebfonts.com/t/6677a36541e322426d7d530f16424537.woff2') format('woff2');
+      font-display: swap;
+      font-weight: 400 700;
+      font-style: normal;
+    }
+    :root {
+      --dot-ink: 115 115 115;
+      --font-geist-mono: 'Geist Mono', 'GeistMono', ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Consolas, monospace;
+      --font-pixelify: 'Pixelify Sans', sans-serif;
+      --font-silk-flower: 'Silk Flower', 'Silk Flower Demo', 'Playfair Display', Georgia, serif;
+    }
+    .dark {
+      --dot-ink: 170 170 170;
+      --font-geist-mono: 'Geist Mono', 'GeistMono', ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Consolas, monospace;
+      --font-pixelify: 'Pixelify Sans', sans-serif;
+      --font-silk-flower: 'Silk Flower', 'Silk Flower Demo', 'Playfair Display', Georgia, serif;
+    }
+
+    /* Silk Flower Headings & Display Typography */
+    .font-silk,
+    .font-heading,
+    h1, h2, h3 {
+      font-family: var(--font-silk-flower);
+      letter-spacing: 0.015em;
+    }
+
+    /* Optional full site Silk Flower mode */
+    body.silk-flower-full,
+    body.silk-flower-full p,
+    body.silk-flower-full li,
+    body.silk-flower-full a,
+    body.silk-flower-full span:not(.font-mono):not([class*="mono"]):not([class*="lucide"]) {
+      font-family: var(--font-silk-flower), Satoshi, sans-serif !important;
+    }
+
+    /* Circular Expanding View Transition Animation (Exact prathm.me / Magic UI theme toggle) */
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation: none;
+      mix-blend-mode: normal;
+    }
+
+    ::view-transition-old(root) {
+      z-index: 1;
+    }
+
+    ::view-transition-new(root) {
+      z-index: 9999;
+    }
+
+    [data-theme-vt="active"]::view-transition-new(root) {
+      clip-path: var(--theme-vt-clip-from, circle(0px at 0 0));
+    }
+
+    /* Theme toggle icon pop & rotate animation */
+    #theme-moon, #theme-sun {
+      animation: themeIconIn 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes themeIconIn {
+      from {
+        transform: rotate(-50deg) scale(0.7);
+        opacity: 0;
+      }
+      to {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+      }
+    }
+
+    html.custom-cursor,
+    html.custom-cursor * {
+      cursor: none !important;
+    }
+    @media (pointer: coarse), (hover: none) {
+      #cursor-tracker {
+        display: none !important;
+      }
+      html.custom-cursor,
+      html.custom-cursor * {
+        cursor: auto !important;
+      }
+    }
+    /* Command Palette Modal Transitions */
+    #cmd-backdrop {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 160ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #cmd-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #cmd-modal {
+      opacity: 0;
+      transform: translate(-50%, -48%) scale(0.96);
+      transition: opacity 160ms cubic-bezier(0.16, 1, 0.3, 1), transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #cmd-backdrop.open #cmd-modal {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .cmd-item.selected,
+    .cmd-item:hover {
+      background-color: var(--color-neutral-100, rgba(0,0,0,0.06));
+    }
+    .dark .cmd-item.selected,
+    .dark .cmd-item:hover {
+      background-color: var(--color-neutral-800, rgba(255,255,255,0.09));
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .text-background {
+      color: var(--background) !important;
+    }
+    .text-background,
+    .text-background * {
+      color: var(--background) !important;
+    }
+    .text-background svg {
+      color: var(--background) !important;
+      stroke: currentColor !important;
+    }
+    .text-background svg rect,
+    .text-background svg path,
+    .text-background svg circle {
+      fill: none;
+    }
+    svg.lucide {
+      fill: none;
+      stroke: currentColor;
+    }
+    /* Magnetic button styling & tap feel (prathm.me) */
+    .magnetic-btn {
+      will-change: transform;
+      user-select: none;
+    }
+    .magnetic-inner {
+      will-change: transform;
+      display: inline-flex;
+      align-items: center;
+    }
+    [data-ui-feedback="tap"] {
+      transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s ease;
+    }
+    [data-ui-feedback="tap"]:active {
+      transform: scale(0.96) !important;
+    }
+    /* Education & Experience item spacing */
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem !important;
+    }
+    .edu-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem !important;
+    }
+    /* Cat Mascot Animations */
+    @keyframes cat-punch {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-3px) rotate(-3deg); }
+      75% { transform: translateY(2px) rotate(3deg); }
+    }
+    @keyframes cat-rapid-punch {
+      0%, 100% { transform: translateX(0) scale(1.08); }
+      20% { transform: translateX(-4px) translateY(-2px) scale(1.1) rotate(-4deg); }
+      40% { transform: translateX(4px) translateY(1px) scale(1.1) rotate(4deg); }
+      60% { transform: translateX(-3px) translateY(2px) scale(1.12) rotate(-3deg); }
+      80% { transform: translateX(3px) translateY(-1px) scale(1.12) rotate(3deg); }
+    }
+    .cat-mascot {
+      animation: cat-punch 2.4s ease-in-out infinite;
+      transform-origin: center bottom;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
+      transition: filter 0.2s ease;
+    }
+    .cat-mascot:hover {
+      animation: cat-rapid-punch 0.38s ease-in-out infinite;
+    }
+    #cat-mascot-draggable {
+      cursor: grab;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: none;
+    }
+    #cat-mascot-draggable:active,
+    #cat-mascot-draggable.is-dragging {
+      cursor: grabbing !important;
+    }
+    #cat-mascot-draggable.is-dragging .cat-mascot {
+      animation: cat-rapid-punch 0.18s ease-in-out infinite !important;
+      filter: drop-shadow(0 18px 26px rgba(0,0,0,0.32)) !important;
+    }
+    .cat-bubble {
+      opacity: 0;
+      transform: translate(-50%, 8px) scale(0.7);
+      transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+      pointer-events: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18), 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .cat-bubble.show {
+      opacity: 1 !important;
+      transform: translate(-50%, -4px) scale(1) !important;
+    }
+  </style>
+
+</head>
+<body class="min-h-dvh font-sans antialiased bg-background text-foreground selection:bg-neutral-800 selection:text-neutral-100">
+
+  
+  <!-- Interactive Custom Cursor (Exact prathm.me implementation) -->
+  <div id="cursor-tracker" aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:10000;">
+    <!-- Floating 'hi' Label -->
+    <div id="cursor-pill" style="position:absolute;top:0;left:0;background:var(--foreground);border-radius:999px;padding:5.58px 11.16px;box-shadow:0 4px 12px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.08);opacity:0;transform-origin:0% 50%;transition:opacity 140ms ease;will-change:transform, opacity;user-select:none;pointer-events:none;transform:translate3d(-9999px, -9999px, 0);">
+      <div id="cursor-pill-text" style="color:var(--background);font-size:13.33px;line-height:1.1;font-weight:600;white-space:nowrap;letter-spacing:0.1px">hi</div>
+    </div>
+    <!-- Arrow SVG Cursor -->
+    <div id="cursor-arrow" style="position:absolute;top:0;left:0;width:31px;height:31px;opacity:0;transform-origin:0% 0%;transition:opacity 140ms ease;will-change:transform, opacity;pointer-events:none;transform:translate3d(-9999px, -9999px, 0);">
+      <svg width="31" height="31" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:visible">
+        <path d="M5 3 L23 14 L14 16 L11 24 Z" fill="var(--foreground)" stroke="rgba(0,0,0,0.18)" stroke-width="0.6" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+  </div>
+
+  <div class="min-h-dvh">
+    <!-- Sticky Top Navigation Bar -->
+    <div class="bg-background/80 sticky top-0 isolate z-50 w-full pt-1 backdrop-blur-md">
+      <div class="mx-auto w-full px-4 md:max-w-[715px] md:px-0">
+        <div class="screen-line-top screen-line-bottom relative mt-1 flex w-full items-center justify-between gap-2 px-4 py-1.5 border-y border-border">
+          
+          <!-- Logo Brand -->
+          <a class="focus-visible:ring-ring/50 rounded-sm outline-none focus-visible:ring-[3px]" href="#">
+            <span class="font-pixel text-xl sm:text-2xl leading-none tracking-wide uppercase font-bold text-foreground">SOFIA</span>
+            <span class="sr-only">- home</span>
+          </a>
+
+          <!-- Nav Links & Utilities -->
+          <div class="flex items-center gap-2 md:gap-4">
+            <nav aria-label="Main" class="hidden items-center gap-4 md:flex">
+              <a class="focus-visible:ring-ring/50 rounded-sm text-sm font-light underline-offset-[5px] outline-none hover:underline focus-visible:ring-[3px] text-muted-foreground hover:text-foreground" href="#projects">Projects</a>
+              <a class="focus-visible:ring-ring/50 rounded-sm text-sm font-light underline-offset-[5px] outline-none hover:underline focus-visible:ring-[3px] text-muted-foreground hover:text-foreground send-email-trigger cursor-pointer" href="https://mail.google.com/mail/?view=cm&fs=1&to=onilongosofianaraine@gmail.com" target="_blank" rel="noopener noreferrer">Contact</a>
+              
+              <!-- Command Palette Trigger (Exact prathm.me) -->
+              <button type="button" id="cmd-btn" aria-label="Open command menu" class="text-muted-foreground hover:text-foreground hover:border-foreground/20 focus-visible:ring-ring/50 border-border bg-background inline-flex h-7 items-center gap-2 rounded-full border px-2.5 text-xs transition-colors outline-none focus-visible:ring-[3px] cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search size-3.5" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+                <span>Search</span>
+                <kbd class="bg-muted text-muted-foreground rounded px-1 py-px font-mono text-[10px] leading-4">⌘SN</kbd>
+              </button>
+            </nav>
+
+            <span class="bg-border hidden h-4 w-px md:block" aria-hidden="true"></span>
+
+            <!-- Audio & Theme Switches -->
+            <div class="flex h-8 items-center gap-0.5 rounded-full bg-black/5 p-0.5 dark:bg-neutral-800">
+              
+              <!-- Sound Toggle -->
+              <button type="button" id="sound-btn" role="switch" aria-checked="true" aria-label="Toggle interface sound" class="focus-visible:ring-ring/50 text-foreground/75 flex size-7 cursor-pointer items-center justify-center rounded-full outline-none transition-colors hover:bg-black/5 focus-visible:ring-[3px] dark:hover:bg-white/10" title="Sound Effects">
+                <svg id="sound-icon-on" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-volume2 size-[14px]"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"></path><path d="M16 9a5 5 0 0 1 0 6"></path><path d="M19.364 18.364a9 9 0 0 0 0-12.728"></path></svg>
+                <svg id="sound-icon-off" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-volume-x size-[14px]" style="display:none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              </button>
+
+              <!-- Theme Toggle -->
+              <button type="button" id="theme-btn" class="inline-flex items-center justify-center text-sm font-medium transition-all outline-none rounded-full active:scale-95 size-7 cursor-pointer hover:bg-accent" aria-label="Toggle theme" title="Toggle Theme">
+                <!-- Moon icon (dark) -->
+                <svg id="theme-moon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+                <!-- Sun icon (light) -->
+                <svg id="theme-sun" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun" style="display:none;"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+                <span class="sr-only">Toggle theme</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Frame -->
+    <div class="mx-auto w-full px-4 md:max-w-[715px] md:px-0">
+      <div class="relative">
+        
+        <!-- Vertical Framing Lines -->
+        <div aria-hidden="true" class="border-border pointer-events-none absolute top-0 bottom-0 z-0 hidden border-r md:-left-6 md:block md:w-6 dark:opacity-60"></div>
+        <div aria-hidden="true" class="border-border pointer-events-none absolute top-0 bottom-0 z-0 hidden border-l md:-right-6 md:block md:w-6 dark:opacity-60"></div>
+        
+        <div id="main" class="relative z-10">
+          <main>
+
+            <!-- Interactive Canvas Dot Field (Signature prathm.me element) -->
+            <div class="screen-line-bottom h-24 w-full sm:h-32 border-b border-border overflow-hidden" aria-label="Interactive dot field">
+              <canvas id="dot-canvas" aria-hidden="true" class="block h-full w-full"></canvas>
+            </div>
+
+            <!-- Profile Header -->
+            <header class="flex w-full items-start justify-between">
+              
+              <div class="flex items-start flex-1 min-w-0">
+                <!-- Avatar with Photo Switch Toggle (Exact prathm.me implementation) -->
+                <div class="p-3 sm:p-4 shrink-0">
+                  <div class="flex w-fit flex-col items-center gap-2">
+                    <div class="border-border w-fit rounded-[8px] border p-[2.7px] dark:border-neutral-700">
+                      <div id="avatar-container" class="border-border relative box-border size-14 overflow-hidden rounded-[7px] border bg-neutral-200 p-0.5 select-none sm:size-20 md:size-21 dark:bg-neutral-800 cursor-pointer" title="Click to toggle real photo">
+                        <!-- Sketch / Illustrated Avatar (Default on prathm.me) -->
+                        <img id="avatar-sketch" alt="Sofia Naraine J. Onilongo - Computer Engineering Student" width="120" height="120" decoding="async" class="box-border size-full scale-110 rounded-[5px] object-cover transition-opacity duration-300" src="avatar-sketch.png" />
+                        <!-- Real Photo (Shown when toggled) -->
+                        <img id="avatar-photo" alt="Sofia Naraine J. Onilongo - photo" aria-hidden="true" loading="lazy" width="120" height="120" decoding="async" class="absolute inset-1 box-border size-[calc(100%-0.5rem)] rounded-[5px] object-cover transition-opacity duration-300 opacity-0" src="profile.jpg" />
+                      </div>
+                    </div>
+                    
+                    <!-- Photo Mode Switch -->
+                    <button type="button" id="avatar-toggle" role="switch" aria-checked="false" aria-label="Show real photo" class="focus-visible:ring-ring/50 relative h-[18px] w-8 shrink-0 cursor-pointer rounded-full border transition-colors outline-none focus-visible:ring-[3px] border-border bg-neutral-200 dark:bg-neutral-800" title="Show real photo">
+                      <span id="avatar-switch-dot" aria-hidden="true" class="absolute top-1/2 size-3 -translate-y-1/2 rounded-full bg-white shadow-sm transition-[left] duration-200 dark:bg-neutral-900 left-[2px]"></span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Name & Title & CTAs -->
+                <div class="flex min-w-0 flex-1 flex-col gap-0 pt-3 sm:pt-4">
+                  <h1 class="font-silk text-2xl font-normal text-neutral-800 md:text-3xl dark:text-neutral-50 tracking-wide">
+                    Sofia Naraine J. Onilongo
+                  </h1>
+                  
+                  <!-- Animated Rotating Roles -->
+                  <p class="flex min-h-6 items-center text-sm font-medium text-neutral-500 md:text-base dark:text-neutral-400">
+                    <span class="relative inline-block overflow-hidden align-bottom h-6 md:h-7">
+                      <span id="role-text" class="flex items-center whitespace-nowrap transition-all duration-300">
+                        Computer Engineering Student
+                      </span>
+                    </span>
+                  </p>
+
+                  <!-- Quick Action Buttons (Exact prathm.me Magnetic Button Physics) -->
+                  <div class="mt-2 flex flex-wrap items-center gap-2">
+                    <!-- Email CTA -->
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=onilongosofianaraine@gmail.com" target="_blank" rel="noopener noreferrer" data-ui-feedback="tap" class="magnetic-btn send-email-trigger focus-visible:ring-ring/50 bg-foreground text-background inline-flex items-center justify-center gap-1.5 overflow-hidden rounded-md border border-transparent px-2.5 py-1 text-xs leading-4 font-medium whitespace-nowrap outline-none transition-opacity hover:opacity-90 focus-visible:ring-[3px] cursor-pointer" style="color: var(--background) !important;">
+                      <span class="magnetic-inner pointer-events-none inline-flex items-center gap-[5px]" style="color: var(--background) !important; will-change: transform;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail size-3.5 shrink-0" style="color: var(--background) !important; stroke: var(--background) !important;"><rect width="20" height="16" x="2" y="4" rx="2" fill="none" stroke="currentColor"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" fill="none" stroke="currentColor"></path></svg>
+                        <span style="color: var(--background) !important; font-weight: 500;">Send an email</span>
+                      </span>
+                    </a>
+
+                    <!-- GitHub CTA -->
+                    <a href="https://github.com/onilongosofianaraine" target="_blank" rel="noopener noreferrer" data-ui-feedback="tap" class="magnetic-btn focus-visible:ring-ring/50 bg-secondary text-secondary-foreground inline-flex items-center justify-center gap-1.5 overflow-hidden rounded-md border border-border px-2.5 py-1 text-xs leading-4 font-medium whitespace-nowrap outline-none transition-colors hover:bg-neutral-200 dark:hover:bg-neutral-800 focus-visible:ring-[3px] cursor-pointer" title="GitHub Status: Active Contributor">
+                      <span class="magnetic-inner pointer-events-none inline-flex items-center gap-[5px]" style="will-change: transform;">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="size-3.5 shrink-0"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        <span>GitHub</span>
+                        <span class="relative flex size-1.5 items-center justify-center ml-0.5">
+                          <span class="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                          <span class="relative inline-flex size-1.5 rounded-full bg-emerald-500"></span>
+                        </span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cat Mascot Sticker (Draggable Everywhere) -->
+              <div id="cat-mascot-wrapper" class="flex shrink-0 items-center justify-center p-2 pr-3 sm:p-4 select-none self-center sm:self-start relative z-30">
+                <div id="cat-mascot-draggable" class="select-none touch-none will-change-transform inline-block relative" style="touch-action: none; -webkit-user-drag: none;" title="Drag me everywhere! (Double-tap to return home)">
+                  <!-- Speech Bubble -->
+                  <div id="cat-speech-bubble" class="cat-bubble font-silk pointer-events-none absolute -top-8 sm:-top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-foreground px-2.5 py-1 text-[12px] tracking-wide font-normal text-background select-none z-50">
+                    Scubbbaa scob scob!
+                    <span class="absolute top-full left-1/2 -translate-x-1/2 -mt-0.5 border-4 border-transparent border-t-foreground"></span>
+                  </div>
+                  <img id="cat-mascot-img" src="cat.png" alt="Draggable punching cat sticker" class="cat-mascot size-14 sm:size-20 md:size-24 object-contain pointer-events-none select-none drop-shadow-md" draggable="false" />
+                </div>
+              </div>
+
+            </header>
+
+            <div aria-hidden="true" class="bg-border h-px w-full shrink-0"></div>
+
+            <!-- About Section -->
+            <section aria-labelledby="about" id="about">
+              <div class="screen-line-bottom relative flex w-full items-center justify-between gap-4 px-4 py-1.5 border-b border-border">
+                <h2 class="scroll-mt-20 text-xl font-normal tracking-tight sm:text-2xl text-foreground">About</h2>
+              </div>
+              <div class="px-5 py-5 sm:px-6 sm:py-6">
+                <ul class="list-disc space-y-3 pl-4 text-base leading-relaxed font-normal text-neutral-800 dark:text-neutral-300">
+                  <li>
+                    I am a <b class="font-medium text-neutral-950 underline underline-offset-2 dark:text-neutral-100">Computer Engineering student</b> passionate about technology, programming, and problem-solving. I enjoy learning new skills and exploring innovative ideas to improve my knowledge and abilities.
+                  </li>
+                  <li>
+                    Currently in my <b class="font-medium text-neutral-950 underline underline-offset-2 dark:text-neutral-100">4th Year of BS Computer Engineering (BSCOE) at ICCT COLLEGES</b>.
+                  </li>
+                  <li>
+                    Primary technical competencies include <b class="font-medium text-neutral-950 underline underline-offset-2 dark:text-neutral-100">Microsoft PowerPoint</b> (presentations & pitch decks), <b class="font-medium text-neutral-950 underline underline-offset-2 dark:text-neutral-100">Microsoft Excel</b> (advanced spreadsheets & data formulas), and <b class="font-medium text-neutral-950 underline underline-offset-2 dark:text-neutral-100">Google Docs</b> (technical engineering reports), alongside computer hardware diagnostics and logic circuit analysis.
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <div aria-hidden="true" class="bg-border h-px w-full shrink-0"></div>
+
+            <!-- Connect Section -->
+            <section aria-labelledby="connect" id="connect">
+              <div class="screen-line-bottom relative flex w-full items-center justify-between gap-4 px-4 py-1.5 border-b border-border">
+                <h2 class="scroll-mt-20 text-xl font-normal tracking-tight sm:text-2xl text-foreground">Connect</h2>
+              </div>
+              <ul class="grid grid-cols-2 gap-2 px-4 py-5 sm:px-5 sm:grid-cols-3 md:grid-cols-6">
+                
+                <!-- Email Pill -->
+                <li class="flex min-w-0">
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=onilongosofianaraine@gmail.com" target="_blank" rel="noopener noreferrer" class="send-email-trigger focus-visible:ring-ring/50 bg-foreground text-background inline-flex items-center justify-center gap-1.5 overflow-hidden rounded-md border border-transparent px-2.5 py-1.5 text-xs leading-4 font-medium whitespace-nowrap outline-none transition-opacity hover:opacity-90 focus-visible:ring-[3px] w-full" style="color: var(--background) !important;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail size-3.5 shrink-0" style="color: var(--background) !important; stroke: var(--background) !important;"><rect width="20" height="16" x="2" y="4" rx="2" fill="none" stroke="currentColor"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" fill="none" stroke="currentColor"></path></svg>
+                    <span class="truncate" style="color: var(--background) !important; font-weight: 500;">Email</span>
+                  </a>
+                </li>
+
+                <!-- GitHub Pill -->
+                <li class="flex min-w-0">
+                  <a href="https://github.com/onilongosofianaraine" target="_blank" rel="noopener noreferrer" class="focus-visible:ring-ring/50 bg-foreground text-background inline-flex items-center justify-center gap-1.5 overflow-hidden rounded-md border border-transparent px-2.5 py-1.5 text-xs leading-4 font-medium whitespace-nowrap outline-none transition-opacity hover:opacity-90 focus-visible:ring-[3px] w-full" style="color: var(--background) !important;" title="GitHub Status: Active Contributor">
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="size-3.5 shrink-0" style="color: var(--background) !important; fill: var(--background) !important;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <span class="truncate" style="color: var(--background) !important; font-weight: 500;">GitHub</span>
+                    <span class="relative flex size-1.5 items-center justify-center ml-0.5">
+                      <span class="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                      <span class="relative inline-flex size-1.5 rounded-full bg-emerald-400"></span>
+                    </span>
+                  </a>
+                </li>
+
+                <!-- Facebook Pill -->
+                <li class="flex min-w-0">
+                  <a href="https://www.facebook.com/sofianaraine.onilongo" target="_blank" rel="noopener noreferrer" class="focus-visible:ring-ring/50 bg-foreground text-background inline-flex items-center justify-center gap-1.5 overflow-hidden rounded-md border border-transparent px-2.5 py-1.5 text-xs leading-4 font-medium whitespace-nowrap outline-none transition-opacity hover:opacity-90 focus-visible:ring-[3px] w-full" style="color: var(--background) !important;">
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="size-3.5 shrink-0" style="color: var(--background) !important; fill: var(--background) !important;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    <span class="truncate" style="color: var(--background) !important; font-weight: 500;">Facebook</span>
+                  </a>
+                </li>
+
+                <!-- Instagram Pill -->
+                <li class="flex min-w-0">
+                  <a href="https://www.instagram.com/lovesofie_18?cplk=bWg0dDM1Nzlrc2py&utm_source=qr" target="_blank" rel="noopener noreferrer" class="focus-visible:ring-ring/50 bg-foreground text-background inline-flex items-center justify-center gap-1.5 overflow-hidden rounded-md border border-transparent px-2.5 py-1.5 text-xs leading-4 font-medium whitespace-nowrap outline-none transition-opacity hover:opacity-90 focus-visible:ring-[3px] w-full" style="color: var(--background) !important;">
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="size-3.5 shrink-0" style="color: var(--background) !important; fill: var(--background) !important;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    <span class="truncate" style="color: var(--background) !important; font-weight: 500;">Instagram</span>
+                  </a>
+                </li>
+
+                <!-- College Info -->
+                <li class="flex min-w-0">
+                  <div class="bg-secondary text-secondary-foreground border-border inline-flex items-center justify-center gap-[6px] overflow-hidden rounded-md border px-2.5 py-1.5 text-xs leading-4 font-medium whitespace-nowrap w-full">
+                    <img src="icct-logo.png" alt="ICCT Colleges Logo" class="size-3.5 shrink-0 rounded-full object-contain bg-white" />
+                    <span class="truncate">ICCT Colleges</span>
+                  </div>
+                </li>
+
+                <!-- Location Info -->
+                <li class="flex min-w-0">
+                  <div class="bg-secondary text-secondary-foreground border-border inline-flex items-center justify-center gap-[6px] overflow-hidden rounded-md border px-2.5 py-1.5 text-xs leading-4 font-medium whitespace-nowrap w-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin size-3.5 shrink-0"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span class="truncate">Rizal, Philippines</span>
+                  </div>
+                </li>
+
+              </ul>
+            </section>
+
+            <div aria-hidden="true" class="bg-border h-px w-full shrink-0"></div>
+
+            <!-- Education & Experience Section -->
+            <section aria-labelledby="experience" id="experience">
+              <div class="screen-line-bottom relative flex w-full items-center justify-between gap-4 px-4 py-1.5 border-b border-border">
+                <h2 class="scroll-mt-20 text-xl font-normal tracking-tight sm:text-2xl text-foreground">Education</h2>
+              </div>
+              <ul class="edu-list px-4 py-5 sm:px-6">
+                
+                <!-- College -->
+                <li class="edu-item flex items-start gap-4">
+                  <div class="flex size-10 shrink-0 items-center justify-center rounded-[10px] border border-border bg-white p-0.5 overflow-hidden shadow-xs dark:bg-white">
+                    <img src="icct-logo.png" alt="ICCT Colleges Logo" width="40" height="40" class="size-full object-contain rounded-[8px]" />
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-baseline justify-between gap-3">
+                      <h3 class="text-foreground min-w-0 truncate text-[15px] leading-snug font-semibold">
+                        ICCT COLLEGES
+                      </h3>
+                      <p class="text-muted-foreground shrink-0 text-xs tabular-nums font-mono">4th Year • Current</p>
+                    </div>
+                    <p class="text-primary text-[13.5px] font-medium leading-snug">Bachelor of Science in Computer Engineering (BSCOE)</p>
+                    <p class="text-muted-foreground text-[13px] leading-relaxed mt-1">
+                      Hands-on coursework covering Computer Hardware Architecture, Logic Circuits &amp; Digital Design, Microprocessors, Embedded Systems, and Applied Programming.
+                    </p>
+                  </div>
+                </li>
+
+              </ul>
+            </section>
+
+            <div aria-hidden="true" class="bg-border h-px w-full shrink-0"></div>
+
+            <!-- Projects Section -->
+            <section aria-labelledby="projects" id="projects">
+              <div class="screen-line-bottom relative flex w-full items-center justify-between gap-4 px-4 py-1.5 border-b border-border">
+                <h2 class="scroll-mt-20 text-xl font-normal tracking-tight sm:text-2xl text-foreground">Projects</h2>
+              </div>
+              <div class="relative">
+                <div aria-hidden="true" class="bg-border pointer-events-none absolute top-0 bottom-0 left-1/2 z-0 hidden w-px sm:block"></div>
+                <div class="relative grid grid-cols-1 sm:grid-cols-2">
+                  
+                  <!-- Project 1: IoT -->
+                  <div class="relative flex flex-col p-4 border-b border-border sm:border-b-0">
+                    <div class="group/card relative flex flex-1 flex-col gap-2">
+                      <div class="flex items-center justify-between gap-3">
+                        <h3 class="min-w-0 truncate text-[15px] leading-snug font-semibold text-foreground">
+                          Smart IoT Telemetry &amp; Sensor Prototype
+                        </h3>
+                        <span class="bg-muted text-muted-foreground rounded px-1.5 py-0.5 font-mono text-[10px]">Hardware</span>
+                      </div>
+                      <p class="text-muted-foreground text-[13px] leading-snug">
+                        Hardware sensor telemetry logging real-time temperature, humidity, and alert triggers for BSCOE laboratory experiments.
+                      </p>
+                      <ul class="flex flex-wrap gap-1.5 mt-auto pt-2">
+                        <li class="bg-secondary text-secondary-foreground border border-border px-1.5 py-0.5 rounded text-[11px] font-mono">C++</li>
+                        <li class="bg-secondary text-secondary-foreground border border-border px-1.5 py-0.5 rounded text-[11px] font-mono">Microcontrollers</li>
+                        <li class="bg-secondary text-secondary-foreground border border-border px-1.5 py-0.5 rounded text-[11px] font-mono">Sensors</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Project 2: Excel / Docs -->
+                  <div class="relative flex flex-col p-4">
+                    <div class="group/card relative flex flex-1 flex-col gap-2">
+                      <div class="flex items-center justify-between gap-3">
+                        <h3 class="min-w-0 truncate text-[15px] leading-snug font-semibold text-foreground">
+                          Spreadsheet &amp; Data Analysis Suite
+                        </h3>
+                        <span class="bg-muted text-muted-foreground rounded px-1.5 py-0.5 font-mono text-[10px]">Excel &amp; Docs</span>
+                      </div>
+                      <p class="text-muted-foreground text-[13px] leading-snug">
+                        Automated Excel modeling templates with pivot calculations, formula automation, and executive report documentation.
+                      </p>
+                      <ul class="flex flex-wrap gap-1.5 mt-auto pt-2">
+                        <li class="bg-secondary text-secondary-foreground border border-border px-1.5 py-0.5 rounded text-[11px] font-mono">Microsoft Excel</li>
+                        <li class="bg-secondary text-secondary-foreground border border-border px-1.5 py-0.5 rounded text-[11px] font-mono">Google Docs</li>
+                        <li class="bg-secondary text-secondary-foreground border border-border px-1.5 py-0.5 rounded text-[11px] font-mono">PowerPoint</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Project 3: Logic Circuit -->
+                  <div class="relative flex flex-col p-4 border-t border-border">
+                    <div class="group/card relative flex flex-1 flex-col gap-2">
+                      <div class="flex items-center justify-between gap-3">
+                        <h3 class="min-w-0 truncate text-[15px] leading-snug font-semibold text-foreground">
+                          Digital Logic Circuit &amp; ALU Simulator
+                        </h3>
+                        <span class="bg-muted text-muted-foreground rounded px-1.5 py-0.5 font-mono text-[10px]">Architecture</span>
+                      </div>
+                      <p class="text-muted-foreground text-[13px] leading-snug">
+                        4-bit binary adder/subtractor and arithmetic logic unit simulation validating digital electronics truth tables.
+                      </p>
+                      <ul class="flex flex-wrap gap-1.5 mt-auto pt-2">
+                        <li class="bg-secondary text-secondary-foreground border border-border px-1.5 py-0.5 rounded text-[11px] font-mono">Digital Logic</li>
+                        <li class="bg-secondary text-secondary-foreground border border-border px-1.5 py-0.5 rounded text-[11px] font-mono">ALU Design</li>
+                        <li class="bg-secondary text-secondary-foreground border border-border px-1.5 py-0.5 rounded text-[11px] font-mono">Binary Gates</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Project 4: Portfolio -->
+                  <div class="relative flex flex-col p-4 border-t border-border">
+                    <div class="group/card relative flex flex-1 flex-col gap-2">
+                      <div class="flex items-center justify-between gap-3">
+                        <h3 class="min-w-0 truncate text-[15px] leading-snug font-semibold text-foreground">
+                          Minimalist Developer Portfolio
+                        </h3>
+                        <span class="bg-muted text-muted-foreground rounded px-1.5 py-0.5 font-mono text-[10px]">Web App</span>
+                      </div>
+                      <p class="text-muted-foreground text-[13px] leading-snug">
+                        Ultra-clean developer portfolio inspired by prathm.me with canvas particle interaction, theme switching, and sound feedback.
+                      </p>
+                      <ul class="flex flex-wrap gap-1.5 mt-auto pt-2">
+                        <li class="bg-secondary text-secondary-foreground border border-border px-1.5 py-0.5 rounded text-[11px] font-mono">HTML5</li>
+                        <li class="bg-secondary text-secondary-foreground border border-border px-1.5 py-0.5 rounded text-[11px] font-mono">TailwindCSS</li>
+                        <li class="bg-secondary text-secondary-foreground border border-border px-1.5 py-0.5 rounded text-[11px] font-mono">JavaScript</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </section>
+
+            <div aria-hidden="true" class="bg-border h-px w-full shrink-0"></div>
+
+            <!-- GitHub Activity & Status Section -->
+            <section aria-labelledby="github-activity" id="github-activity">
+              <div class="screen-line-bottom relative flex w-full items-center justify-between gap-4 px-4 py-1.5 border-b border-border">
+                <div class="flex items-center gap-2">
+                  <h2 class="scroll-mt-20 text-xl font-normal tracking-tight sm:text-2xl text-foreground">GitHub Activity</h2>
+                  <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-medium text-emerald-600 dark:text-emerald-400">
+                    <span class="relative flex size-1.5">
+                      <span class="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                      <span class="relative inline-flex size-1.5 rounded-full bg-emerald-500"></span>
+                    </span>
+                    Active
+                  </span>
+                </div>
+                <a href="https://github.com/onilongosofianaraine" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1">
+                  <span>@onilongosofianaraine</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link size-3"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                </a>
+              </div>
+
+              <div class="p-4 sm:p-5 space-y-3.5">
+                <!-- Heatmap Card -->
+                <div class="rounded-xl border border-border bg-card/60 p-4 shadow-xs">
+                  <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b border-border/60">
+                    <div class="flex items-center gap-2.5">
+                      <div class="flex size-7 items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-800 text-foreground">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="size-4"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                      </div>
+                      <div>
+                        <span id="github-total-contributions" class="text-xs sm:text-sm font-semibold text-foreground">2 contributions in the last year</span>
+                        <p class="text-[11px] text-muted-foreground">Contributions calendar &amp; commit stream</p>
+                      </div>
+                    </div>
+                    <span class="inline-flex items-center gap-1 rounded bg-muted px-2 py-0.5 font-mono text-[11px] text-muted-foreground">
+                      Status: <strong class="text-emerald-500 font-semibold ml-0.5">Active</strong>
+                    </span>
+                  </div>
+
+                  <!-- Horizontally Scrollable Heatmap -->
+                  <div class="overflow-x-auto pb-1 pt-1 scrollbar-none">
+                    <div class="inline-flex flex-col gap-1.5 min-w-fit select-none">
+                      <!-- Month Labels Header -->
+                      <div id="github-months-row" class="relative h-3 text-[9px] text-muted-foreground font-mono pl-6"></div>
+
+                      <!-- Heatmap Rows with Weekday Labels -->
+                      <div class="flex items-start gap-1.5">
+                        <div class="flex flex-col justify-between text-[9px] text-muted-foreground font-mono h-[88px] pt-1.5 pb-0.5 select-none w-4.5 shrink-0 leading-none">
+                          <span>Mon</span>
+                          <span>Wed</span>
+                          <span>Fri</span>
+                        </div>
+                        <div id="github-heatmap-grid" class="flex gap-[3px]">
+                          <!-- Dynamically rendered cells -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Legend & Hover Info -->
+                  <div class="flex flex-wrap items-center justify-between gap-2 pt-3 mt-2 border-t border-border/50 text-[11px] text-muted-foreground">
+                    <span id="github-hover-info" class="transition-colors opacity-70">Hover a square to view details</span>
+                    <div class="flex items-center gap-1">
+                      <span>Less</span>
+                      <span class="size-2.5 rounded-[2px] bg-neutral-200 dark:bg-neutral-800"></span>
+                      <span class="size-2.5 rounded-[2px] bg-emerald-400/60 dark:bg-emerald-900"></span>
+                      <span class="size-2.5 rounded-[2px] bg-emerald-500/80 dark:bg-emerald-700"></span>
+                      <span class="size-2.5 rounded-[2px] bg-emerald-500 dark:bg-emerald-500"></span>
+                      <span class="size-2.5 rounded-[2px] bg-emerald-600 dark:bg-emerald-400"></span>
+                      <span>More</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Latest Repository / Live Commit Event -->
+                <a href="https://github.com/onilongosofianaraine/github-portfoloi" target="_blank" rel="noopener noreferrer" class="group flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-lg border border-border bg-card p-3.5 transition-colors hover:border-foreground/20 hover:bg-neutral-50 dark:hover:bg-neutral-900">
+                  <div class="flex items-start sm:items-center gap-3 min-w-0">
+                    <div class="flex size-9 shrink-0 items-center justify-center rounded-md border border-border bg-muted text-foreground">
+                      <svg class="size-4 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path></svg>
+                    </div>
+                    <div class="min-w-0">
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm font-semibold text-foreground group-hover:underline truncate">github-portfoloi</span>
+                        <span class="rounded bg-muted px-1.5 py-0.5 text-[10px] font-mono text-muted-foreground border border-border/50">Public</span>
+                        <span class="inline-flex items-center gap-1 text-[10px] text-emerald-500 font-medium">
+                          <span class="size-1.5 rounded-full bg-emerald-500"></span>
+                          Updated
+                        </span>
+                      </div>
+                      <p class="text-xs text-muted-foreground truncate mt-0.5">Interactive developer portfolio built with modern physics, audio, and Tailwind</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3 shrink-0 text-xs text-muted-foreground font-mono self-end sm:self-center">
+                    <span class="inline-flex items-center gap-1">
+                      <svg class="size-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                      <span id="github-latest-push-text">Latest push</span>
+                    </span>
+                    <span class="group-hover:translate-x-0.5 transition-transform">→</span>
+                  </div>
+                </a>
+              </div>
+            </section>
+
+            <div aria-hidden="true" class="bg-border h-px w-full shrink-0"></div>
+
+            <!-- Skills Section (Stack) -->
+            <section aria-labelledby="stack" id="stack">
+              <div class="screen-line-bottom relative flex w-full items-center justify-between gap-4 px-4 py-1.5 border-b border-border">
+                <h2 class="scroll-mt-20 text-xl font-normal tracking-tight sm:text-2xl text-foreground">Skills &amp; Technical Toolkit</h2>
+              </div>
+              <ul class="flex flex-wrap gap-2 px-4 py-5 sm:px-5">
+                
+                <!-- Primary requested by user -->
+                <li class="flex"><button type="button" class="focus-visible:ring-ring/50 bg-background border-border text-foreground inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-semibold whitespace-nowrap outline-none transition-colors hover:border-neutral-400 dark:hover:border-neutral-600 border-primary/40 text-primary">📊 Microsoft PowerPoint</button></li>
+                <li class="flex"><button type="button" class="focus-visible:ring-ring/50 bg-background border-border text-foreground inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-semibold whitespace-nowrap outline-none transition-colors hover:border-neutral-400 dark:hover:border-neutral-600 border-primary/40 text-primary">📈 Microsoft Excel</button></li>
+                <li class="flex"><button type="button" class="focus-visible:ring-ring/50 bg-background border-border text-foreground inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-semibold whitespace-nowrap outline-none transition-colors hover:border-neutral-400 dark:hover:border-neutral-600 border-primary/40 text-primary">📄 Google Docs</button></li>
+                <li class="flex"><button type="button" class="focus-visible:ring-ring/50 bg-background border-border text-foreground inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium whitespace-nowrap outline-none transition-colors hover:border-neutral-400 dark:hover:border-neutral-600">Google Workspace</button></li>
+                
+                <!-- Engineering & Hardware -->
+                <li class="flex"><button type="button" class="focus-visible:ring-ring/50 bg-background border-border text-foreground inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium whitespace-nowrap outline-none transition-colors hover:border-neutral-400 dark:hover:border-neutral-600">Computer Systems Servicing</button></li>
+                <li class="flex"><button type="button" class="focus-visible:ring-ring/50 bg-background border-border text-foreground inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium whitespace-nowrap outline-none transition-colors hover:border-neutral-400 dark:hover:border-neutral-600">Logic Circuit Analysis</button></li>
+                <li class="flex"><button type="button" class="focus-visible:ring-ring/50 bg-background border-border text-foreground inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium whitespace-nowrap outline-none transition-colors hover:border-neutral-400 dark:hover:border-neutral-600">Digital Electronics</button></li>
+                <li class="flex"><button type="button" class="focus-visible:ring-ring/50 bg-background border-border text-foreground inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium whitespace-nowrap outline-none transition-colors hover:border-neutral-400 dark:hover:border-neutral-600">Embedded Systems</button></li>
+                <li class="flex"><button type="button" class="focus-visible:ring-ring/50 bg-background border-border text-foreground inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium whitespace-nowrap outline-none transition-colors hover:border-neutral-400 dark:hover:border-neutral-600">PC Troubleshooting</button></li>
+
+                <!-- Programming -->
+                <li class="flex"><button type="button" class="focus-visible:ring-ring/50 bg-background border-border text-foreground inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium whitespace-nowrap outline-none transition-colors hover:border-neutral-400 dark:hover:border-neutral-600">C++</button></li>
+                <li class="flex"><button type="button" class="focus-visible:ring-ring/50 bg-background border-border text-foreground inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium whitespace-nowrap outline-none transition-colors hover:border-neutral-400 dark:hover:border-neutral-600">Python Basics</button></li>
+                <li class="flex"><button type="button" class="focus-visible:ring-ring/50 bg-background border-border text-foreground inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium whitespace-nowrap outline-none transition-colors hover:border-neutral-400 dark:hover:border-neutral-600">HTML5 &amp; CSS3</button></li>
+                <li class="flex"><button type="button" class="focus-visible:ring-ring/50 bg-background border-border text-foreground inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium whitespace-nowrap outline-none transition-colors hover:border-neutral-400 dark:hover:border-neutral-600">JavaScript</button></li>
+
+                <!-- Tools -->
+                <li class="flex"><button type="button" class="focus-visible:ring-ring/50 bg-background border-border text-foreground inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium whitespace-nowrap outline-none transition-colors hover:border-neutral-400 dark:hover:border-neutral-600">GitHub</button></li>
+                <li class="flex"><button type="button" class="focus-visible:ring-ring/50 bg-background border-border text-foreground inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium whitespace-nowrap outline-none transition-colors hover:border-neutral-400 dark:hover:border-neutral-600">Git</button></li>
+                <li class="flex"><button type="button" class="focus-visible:ring-ring/50 bg-background border-border text-foreground inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium whitespace-nowrap outline-none transition-colors hover:border-neutral-400 dark:hover:border-neutral-600">VS Code</button></li>
+              </ul>
+            </section>
+
+            <!-- Call To Action Section (Exact prathm.me) -->
+            <section class="border-border border-b py-10 sm:py-12">
+              <div class="mx-auto flex flex-col items-center px-5 pt-2 pb-0 sm:px-10">
+                <p class="mb-5 text-center text-sm text-balance opacity-70 md:text-lg">Still reading? That means something clicked. Let’s talk.</p>
+                <a class="send-email-trigger focus-visible:ring-ring/50 inset-shadow group inline-flex cursor-pointer items-center self-center rounded-md border border-black/10 bg-black/[0.03] px-2 py-1 text-sm text-black shadow-md outline-none focus-visible:ring-[3px] dark:border-white/15 dark:bg-white/15 dark:text-white dark:shadow-[0_0_5px_rgba(255,255,255,0.1)]" href="https://mail.google.com/mail/?view=cm&fs=1&to=onilongosofianaraine@gmail.com" target="_blank" rel="noopener noreferrer">
+                  <span class="relative z-20 flex items-center gap-2 transition-[gap] duration-300 group-hover:gap-8">
+                    <span class="size-5 shrink-0 overflow-hidden rounded-full">
+                      <img alt="Sofia Naraine J. Onilongo" loading="lazy" width="20" height="20" decoding="async" class="size-full object-cover" src="avatar-sketch.png"/>
+                    </span>
+                    <span aria-hidden="true" class="absolute left-6 flex -translate-x-full items-center opacity-0 transition-[transform,opacity] duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus size-3"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+                      <span class="mr-2 ml-1 flex size-5 items-center justify-center rounded-full bg-black/10 text-[8px] dark:bg-white/10 font-bold">You</span>
+                    </span>
+                    <span class="relative ml-0 block text-sm font-bold whitespace-nowrap transition-[margin-left] duration-300 group-hover:ml-4">Get in touch</span>
+                  </span>
+                </a>
+              </div>
+            </section>
+
+          </main>
+
+          <!-- Footer (Signature prathm.me design) -->
+          <footer>
+            <div aria-hidden="true" class="bg-border h-px w-full shrink-0"></div>
+            <div class="flex flex-col items-center justify-center py-6 text-center">
+              <div class="mb-2.5 flex items-center gap-3 text-xs text-muted-foreground">
+                <a href="https://github.com/onilongosofianaraine" target="_blank" rel="noopener noreferrer" class="hover:text-foreground transition-colors underline-offset-4 hover:underline">GitHub</a>
+                <span class="opacity-40">•</span>
+                <a href="https://www.facebook.com/sofianaraine.onilongo" target="_blank" rel="noopener noreferrer" class="hover:text-foreground transition-colors underline-offset-4 hover:underline">Facebook</a>
+                <span class="opacity-40">•</span>
+                <a href="https://www.instagram.com/lovesofie_18?cplk=bWg0dDM1Nzlrc2py&utm_source=qr" target="_blank" rel="noopener noreferrer" class="hover:text-foreground transition-colors underline-offset-4 hover:underline">Instagram</a>
+                <span class="opacity-40">•</span>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=onilongosofianaraine@gmail.com" target="_blank" rel="noopener noreferrer" class="hover:text-foreground transition-colors underline-offset-4 hover:underline send-email-trigger">Email</a>
+              </div>
+              <p class="text-foreground/70 text-sm">
+                Designed &amp; Crafted for <span class="text-foreground font-semibold">Sofia Naraine J. Onilongo</span><br/>
+                © 2026 • 4th Year BS Computer Engineering, ICCT Colleges
+              </p>
+            </div>
+            <div aria-hidden="true" class="bg-border h-px w-full shrink-0"></div>
+            
+            <!-- Bottom Interactive Canvas Dot Field (Signature prathm.me element) -->
+            <div class="screen-line-bottom relative h-24 w-full sm:h-28 overflow-hidden" aria-label="Interactive footer dot field">
+              <canvas id="footer-dot-canvas" aria-hidden="true" class="block h-full w-full"></canvas>
+            </div>
+          </footer>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Bottom Search Button for Mobile (Exact prathm.me implementation) -->
+  <div class="fixed inset-x-0 bottom-6 z-40 mx-auto w-fit md:hidden">
+    <button type="button" id="mobile-cmd-btn" class="bg-background/95 gap-2 rounded-full border border-border px-5 py-2 shadow-lg backdrop-blur-md transition-transform active:scale-95 inline-flex items-center text-xs font-medium text-muted-foreground hover:text-foreground cursor-pointer">
+      <svg class="size-3.5 text-muted-foreground" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+      <span>Search</span>
+      <kbd class="bg-muted text-muted-foreground rounded px-1 py-px font-mono text-[10px] leading-4">⌘SN</kbd>
+    </button>
+  </div>
+
+  <!-- Command Palette Modal (Exact prathm.me implementation) -->
+  <div id="cmd-backdrop" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4" aria-hidden="true" style="display:none;">
+    <div id="cmd-modal" role="dialog" aria-modal="true" aria-label="Command Menu" class="bg-popover border-border/80 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-0 rounded-lg border p-0 shadow-2xl ring-1 ring-black/5 sm:max-w-lg dark:ring-white/10 overflow-hidden font-sans">
+      
+      <!-- Input Header -->
+      <div data-slot="command-input-wrapper" class="flex h-12 items-center gap-2.5 border-b border-border px-3.5">
+        <svg class="size-4 shrink-0 text-muted-foreground opacity-60" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+        <input type="text" id="cmd-input" class="placeholder:text-muted-foreground flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none text-foreground font-sans" placeholder="Jump to a page or link…" autocomplete="off" />
+        <kbd class="bg-muted text-muted-foreground rounded px-1.5 py-0.5 text-[10px] font-mono border border-border/50">ESC</kbd>
+      </div>
+
+      <!-- Scrollable List of Actions -->
+      <div id="cmd-list" class="max-h-[min(65vh,26rem)] overflow-y-auto p-1.5 text-foreground space-y-1 select-none">
+        
+        <!-- Group: Pages -->
+        <div class="cmd-group" data-group="pages">
+          <div class="px-2 py-1.5 text-[11px] font-medium text-muted-foreground uppercase tracking-wider">Pages</div>
+          <a href="#" class="cmd-item flex items-center gap-2.5 rounded-md px-2.5 py-2 text-sm text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer" data-text="home jump top">
+            <svg class="size-4 text-muted-foreground" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <span>Home</span>
+          </a>
+          <a href="#about" class="cmd-item flex items-center gap-2.5 rounded-md px-2.5 py-2 text-sm text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer" data-text="about me profile bio student">
+            <svg class="size-4 text-muted-foreground" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+            <span>About</span>
+          </a>
+          <a href="#experience" class="cmd-item flex items-center gap-2.5 rounded-md px-2.5 py-2 text-sm text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer" data-text="education icct colleges college degree bscoe">
+            <svg class="size-4 text-muted-foreground" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            <span>Education</span>
+          </a>
+          <a href="#projects" class="cmd-item flex items-center gap-2.5 rounded-md px-2.5 py-2 text-sm text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer" data-text="projects portfolio works computer engineering">
+            <svg class="size-4 text-muted-foreground" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg>
+            <span>Projects</span>
+          </a>
+          <a href="#github-activity" class="cmd-item flex items-center gap-2.5 rounded-md px-2.5 py-2 text-sm text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer" data-text="github activity status commits contributions heatmap repository code">
+            <svg class="size-4 text-muted-foreground" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <span>GitHub Activity</span>
+          </a>
+          <a href="#stack" class="cmd-item flex items-center gap-2.5 rounded-md px-2.5 py-2 text-sm text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer" data-text="skills stack powerpoint excel google docs python hardware">
+            <svg class="size-4 text-muted-foreground" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M7 7h10"></path><path d="M7 12h10"></path><path d="M7 17h10"></path></svg>
+            <span>Skills &amp; Toolkit</span>
+          </a>
+        </div>
+
+        <div class="h-px bg-border my-1"></div>
+
+        <!-- Group: Links -->
+        <div class="cmd-group" data-group="links">
+          <div class="px-2 py-1.5 text-[11px] font-medium text-muted-foreground uppercase tracking-wider">Links</div>
+          <a href="https://github.com/onilongosofianaraine" target="_blank" rel="noopener noreferrer" class="cmd-item flex items-center gap-2.5 rounded-md px-2.5 py-2 text-sm text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer" data-text="github repo profile code">
+            <svg class="size-4 text-muted-foreground" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <span>GitHub Profile</span>
+          </a>
+          <a href="https://www.facebook.com/sofianaraine.onilongo" target="_blank" rel="noopener noreferrer" class="cmd-item flex items-center justify-between rounded-md px-2.5 py-2 text-sm text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer" data-text="facebook social profile sofianaraine onilongo fb">
+            <div class="flex items-center gap-2.5">
+              <svg class="size-4 text-muted-foreground" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span>Facebook: Sofia Naraine</span>
+            </div>
+            <span class="text-xs text-muted-foreground font-mono">Open ↗</span>
+          </a>
+          <a href="https://www.instagram.com/lovesofie_18?cplk=bWg0dDM1Nzlrc2py&utm_source=qr" target="_blank" rel="noopener noreferrer" class="cmd-item flex items-center justify-between rounded-md px-2.5 py-2 text-sm text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer" data-text="instagram social profile lovesofie_18 ig photo reels">
+            <div class="flex items-center gap-2.5">
+              <svg class="size-4 text-muted-foreground" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              <span>Instagram: @lovesofie_18</span>
+            </div>
+            <span class="text-xs text-muted-foreground font-mono">Open ↗</span>
+          </a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=onilongosofianaraine@gmail.com" target="_blank" rel="noopener noreferrer" class="send-email-trigger cmd-item flex items-center justify-between rounded-md px-2.5 py-2 text-sm text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer" data-text="email send message contact onilongosofianaraine@gmail.com">
+            <div class="flex items-center gap-2.5">
+              <svg class="size-4 text-muted-foreground" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              <span>Email: onilongosofianaraine@gmail.com</span>
+            </div>
+            <span class="text-xs text-muted-foreground font-mono">Send</span>
+          </a>
+          <button type="button" class="copy-email-trigger w-full text-left cmd-item flex items-center justify-between rounded-md px-2.5 py-2 text-sm text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer" data-copy="onilongosofianaraine@gmail.com" data-text="copy email address clipboard">
+            <div class="flex items-center gap-2.5">
+              <svg class="size-4 text-muted-foreground" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
+              <span>Copy Email to Clipboard</span>
+            </div>
+            <span class="text-xs text-muted-foreground font-mono">Copy</span>
+          </button>
+        </div>
+
+        <div class="h-px bg-border my-1"></div>
+
+        <!-- Group: Settings -->
+        <div class="cmd-group" data-group="settings">
+          <div class="px-2 py-1.5 text-[11px] font-medium text-muted-foreground uppercase tracking-wider">Settings</div>
+          <div id="cmd-toggle-theme" class="cmd-item flex items-center justify-between rounded-md px-2.5 py-2 text-sm text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer" data-text="setting theme appearance dark light mode">
+            <div class="flex items-center gap-2.5">
+              <svg class="size-4 text-muted-foreground" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+              <span id="cmd-theme-label">Switch to light theme</span>
+            </div>
+            <span class="text-xs text-muted-foreground font-mono tracking-widest">D</span>
+          </div>
+          <div id="cmd-toggle-sound" class="cmd-item flex items-center justify-between rounded-md px-2.5 py-2 text-sm text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer" data-text="setting sound audio effects toggle mute">
+            <div class="flex items-center gap-2.5">
+              <svg class="size-4 text-muted-foreground" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"></path><path d="M16 9a5 5 0 0 1 0 6"></path></svg>
+              <span id="cmd-sound-label">Turn off interface sound</span>
+            </div>
+            <span class="text-xs text-muted-foreground font-mono">Audio</span>
+          </div>
+          <div id="cmd-toggle-avatar" class="cmd-item flex items-center justify-between rounded-md px-2.5 py-2 text-sm text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer" data-text="setting avatar photo sketch image toggle">
+            <div class="flex items-center gap-2.5">
+              <svg class="size-4 text-muted-foreground" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"></circle><path d="M20 21a8 8 0 0 0-16 0"></path></svg>
+              <span id="cmd-avatar-label">Show real photo</span>
+            </div>
+            <span class="text-xs text-muted-foreground font-mono">Photo</span>
+          </div>
+          <div id="cmd-toggle-font" class="cmd-item flex items-center justify-between rounded-md px-2.5 py-2 text-sm text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer" data-text="setting font typography silk flower headings full page text">
+            <div class="flex items-center gap-2.5">
+              <svg class="size-4 text-muted-foreground" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" x2="15" y1="20" y2="20"></line><line x1="12" x2="12" y1="4" y2="20"></line></svg>
+              <span id="cmd-font-label">Silk Flower: Apply to full site</span>
+            </div>
+            <span class="text-xs text-muted-foreground font-mono">Font</span>
+          </div>
+        </div>
+
+        <!-- Empty Results Message -->
+        <div id="cmd-empty" class="py-8 text-center text-sm text-muted-foreground" style="display:none;">
+          Nothing matches that.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript Engine -->
+  
+  <script>
+    // --- 1. Exact prathm.me Interactive Dot Field Physics Engine (Upper & Footer) ---
+    (function initExactDotFields() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+      function parseDotInk() {
+        const raw = getComputedStyle(document.documentElement).getPropertyValue('--dot-ink').trim().split(/[\s,]+/).map(Number);
+        return raw.length < 3 || raw.some(Number.isNaN) ? { r: 115, g: 115, b: 115 } : { r: raw[0], g: raw[1], b: raw[2] };
+      }
+
+      let dotSprites = [];
+      function createSprites() {
+        const ink = parseDotInk();
+        dotSprites = Array.from({ length: 20 }, (_, n) => {
+          const c = document.createElement('canvas');
+          c.width = 32;
+          c.height = 32;
+          const a = c.getContext('2d');
+          if (a) {
+            a.beginPath();
+            a.fillStyle = 'rgba(' + ink.r + ', ' + ink.g + ', ' + ink.b + ', ' + (0.3 + (n / 19) * 0.7) + ')';
+            a.arc(16, 16, 16, 0, 2 * Math.PI);
+            a.fill();
+          }
+          return c;
+        });
+      }
+      createSprites();
+
+      function setupField(canvasId) {
+        const canvas = document.getElementById(canvasId);
+        if (!canvas) return null;
+        const container = canvas.parentElement;
+        if (!container) return null;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return null;
+
+        let dots = [];
+        let waves = [];
+        let pointer = { x: -9999, y: -9999, inside: false };
+        let width = 0, height = 0;
+        let animId = 0, lastTime = 0, totalTime = 0;
+        let isVisible = true;
+
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            isVisible = entries[0].isIntersecting;
+          }, { threshold: 0.05 });
+          observer.observe(container);
+        }
+
+        function resize() {
+          const rect = container.getBoundingClientRect();
+          width = rect.width;
+          height = rect.height;
+          if (width === 0 || height === 0) return;
+          canvas.width = Math.max(1, Math.round(width * dpr));
+          canvas.height = Math.max(1, Math.round(height * dpr));
+          canvas.style.width = width + 'px';
+          canvas.style.height = height + 'px';
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          dots.length = 0;
+
+          const cols = Math.floor(width / 9);
+          const rows = Math.floor(height / 9);
+          const startX = (width - (cols - 1) * 9) / 2;
+          const startY = (height - (rows - 1) * 9) / 2;
+
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+              const x = startX + 9 * c;
+              const y = startY + 9 * r;
+              dots.push({ ox: x, oy: y, x: x, y: y, vx: 0, vy: 0, glow: 0 });
+            }
+          }
+        }
+
+        function loop(time) {
+          animId = requestAnimationFrame(loop);
+          if (!lastTime) lastTime = time;
+          const dt = Math.min(0.05, Math.max(0, (time - lastTime) / 1000));
+          lastTime = time;
+          if (!isVisible || document.hidden || dt === 0) return;
+
+          totalTime += dt;
+          ctx.clearRect(0, 0, width, height);
+
+          const glowFactor = 1 - Math.pow(0.85, 60 * dt);
+          const friction = Math.pow(0.85, 60 * dt);
+
+          for (let i = waves.length - 1; i >= 0; i--) {
+            waves[i].time += dt;
+            if (waves[i].time > 1.7) waves.splice(i, 1);
+          }
+
+          for (let dot of dots) {
+            let fx = 0, fy = 0, targetGlow = 0;
+
+            if (pointer.inside) {
+              const dx = dot.ox - pointer.x;
+              const dy = dot.oy - pointer.y;
+              const distSq = dx * dx + dy * dy;
+              if (distSq < 14400) {
+                const dist = Math.sqrt(distSq) || 1;
+                const norm = 1 - dist / 120;
+                const force = norm * norm * 52;
+                fx += (dx / dist) * force;
+                fy += (dy / dist) * force;
+                targetGlow = norm;
+              }
+            }
+
+            for (let wave of waves) {
+              const dx = dot.ox - wave.x;
+              const dy = dot.oy - wave.y;
+              const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+              const waveDist = Math.abs(dist - 220 * wave.time);
+              if (waveDist < 34) {
+                const factor = (1 - waveDist / 34) * (1 - wave.time / 1.7);
+                targetGlow = Math.max(targetGlow, factor);
+                fx += (dx / dist) * factor * 24;
+                fy += (dy / dist) * factor * 24;
+              }
+            }
+
+            fx += (dot.ox - dot.x) * 6.4;
+            fy += (dot.oy - dot.y) * 6.4;
+
+            dot.vx = (dot.vx + fx * dt) * friction;
+            dot.vy = (dot.vy + fy * dt) * friction;
+            dot.x += dot.vx * dt * 60;
+            dot.y += dot.vy * dt * 60;
+
+            dot.glow += (targetGlow - dot.glow) * glowFactor;
+
+            const breathe = (Math.sin(0.8 * totalTime + 0.015 * dot.ox + 0.02 * dot.oy) + 1) * 0.04;
+            const u = Math.min(1, dot.glow + breathe);
+
+            ctx.globalAlpha = Math.min(1, 0.48 + breathe + 0.5 * dot.glow);
+            const spriteIdx = Math.floor(19 * u);
+            if (dotSprites[spriteIdx]) {
+              ctx.drawImage(dotSprites[spriteIdx], dot.x - 1, dot.y - 1, 2, 2);
+            }
+          }
+          ctx.globalAlpha = 1;
+        }
+
+        function updatePointer(clientX, clientY) {
+          const rect = canvas.getBoundingClientRect();
+          pointer.x = clientX - rect.left;
+          pointer.y = clientY - rect.top;
+          pointer.inside = true;
+        }
+
+        container.addEventListener('pointermove', (e) => updatePointer(e.clientX, e.clientY), { passive: true });
+        container.addEventListener('pointerdown', (e) => {
+          updatePointer(e.clientX, e.clientY);
+          waves.push({ x: pointer.x, y: pointer.y, time: 0 });
+          if (waves.length > 8) waves.splice(0, waves.length - 8);
+        });
+        container.addEventListener('pointerleave', () => {
+          pointer.inside = false;
+          pointer.x = -9999;
+          pointer.y = -9999;
+        });
+        container.addEventListener('pointercancel', () => {
+          pointer.inside = false;
+          pointer.x = -9999;
+          pointer.y = -9999;
+        });
+        container.addEventListener('pointerup', (e) => {
+          if (e.pointerType === 'touch') {
+            pointer.inside = false;
+            pointer.x = -9999;
+            pointer.y = -9999;
+          }
+        });
+
+        window.addEventListener('resize', resize);
+        resize();
+        animId = requestAnimationFrame(loop);
+
+        return { resize };
+      }
+
+      setupField('dot-canvas');
+      setupField('footer-dot-canvas');
+
+      // Re-create sprites when theme changes
+      const themeObserver = new MutationObserver(() => {
+        createSprites();
+      });
+      themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    })();
+
+    
+    // --- 2. Exact prathm.me Custom Cursor with Dual Spring Physics ---
+    (function initExactPrathmCursor() {
+      if (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) return;
+
+      const cursorPill = document.getElementById('cursor-pill');
+      const cursorArrow = document.getElementById('cursor-arrow');
+      if (!cursorPill || !cursorArrow) return;
+
+      // Spring simulator with numerical substep integration
+      class Spring {
+        constructor(val, stiffness, damping, mass) {
+          this.current = val;
+          this.target = val;
+          this.velocity = 0;
+          this.stiffness = stiffness;
+          this.damping = damping;
+          this.mass = mass;
+        }
+        set(target) {
+          this.target = target;
+        }
+        update(dt) {
+          const step = 0.002;
+          let rem = dt;
+          while (rem > 0) {
+            const h = Math.min(rem, step);
+            const force = -this.stiffness * (this.current - this.target) - this.damping * this.velocity;
+            const accel = force / this.mass;
+            this.velocity += accel * h;
+            this.current += this.velocity * h;
+            rem -= h;
+          }
+          return this.current;
+        }
+      }
+
+      const c = 31; // cursor size 31px
+      const P = { x: 0.9 * c, y: 0.2 * c + 6 }; // x: 27.9, y: 12.2 offset
+      const u = 25; // labelTiltStrength
+
+      // Springs matching prathm.me framer-motion values
+      // Arrow spring: stiffness 380, damping 32, mass 0.6
+      const arrowX = new Spring(-9999, 380, 32, 0.6);
+      const arrowY = new Spring(-9999, 380, 32, 0.6);
+
+      // Label spring: stiffness 220, damping 26, mass 0.7
+      const labelX = new Spring(-9999, 220, 26, 0.7);
+      const labelY = new Spring(-9999, 220, 26, 0.7);
+
+      // Scale spring: stiffness 500, damping 28, mass 0.5
+      const scaleSpring = new Spring(1, 500, 28, 0.5);
+
+      // Tilt spring: stiffness 200, damping 24, mass 0.6
+      const tiltSpring = new Spring(0, 200, 24, 0.6);
+
+      let isVisible = false;
+      let lastPointerTime = performance.now();
+      let lastClientX = 0, lastClientY = 0;
+      let lastAnimTime = 0;
+
+      document.documentElement.classList.add('custom-cursor');
+
+      window.addEventListener('mousemove', (e) => {
+        const now = performance.now();
+        const dt = Math.max(1, now - lastPointerTime);
+        const vx = ((e.clientX - lastClientX) / dt) * 1000;
+        const vy = ((e.clientY - lastClientY) / dt) * 1000;
+
+        lastPointerTime = now;
+        lastClientX = e.clientX;
+        lastClientY = e.clientY;
+
+        arrowX.set(e.clientX);
+        arrowY.set(e.clientY);
+        labelX.set(e.clientX);
+        labelY.set(e.clientY);
+
+        // Velocity tilt
+        const speed = Math.min(1, Math.hypot(vx, vy) / 1500);
+        const dir = vx === 0 ? 0 : (vx > 0 ? 1 : -1);
+        tiltSpring.set(dir * speed * u);
+
+        if (!isVisible) {
+          isVisible = true;
+          arrowX.current = e.clientX;
+          arrowY.current = e.clientY;
+          labelX.current = e.clientX;
+          labelY.current = e.clientY;
+          cursorPill.style.opacity = '1';
+          cursorArrow.style.opacity = '1';
+        }
+      }, { passive: true });
+
+      window.addEventListener('mousedown', () => {
+        scaleSpring.set(0.92); // pressScale 0.92
+      });
+
+      window.addEventListener('mouseup', () => {
+        scaleSpring.set(1.0);
+      });
+
+      document.addEventListener('mouseenter', () => {
+        isVisible = true;
+        cursorPill.style.opacity = '1';
+        cursorArrow.style.opacity = '1';
+      });
+
+      document.addEventListener('mouseleave', () => {
+        isVisible = false;
+        cursorPill.style.opacity = '0';
+        cursorArrow.style.opacity = '0';
+        tiltSpring.set(0);
+      });
+
+      function animateCursor(now) {
+        if (!lastAnimTime) lastAnimTime = now;
+        const dt = Math.min(0.05, Math.max(0.001, (now - lastAnimTime) / 1000));
+        lastAnimTime = now;
+
+        if (isVisible) {
+          const curArrowX = arrowX.update(dt);
+          const curArrowY = arrowY.update(dt);
+          const curLabelX = labelX.update(dt);
+          const curLabelY = labelY.update(dt);
+          const curScale = scaleSpring.update(dt);
+          const curTilt = tiltSpring.update(dt);
+
+          cursorArrow.style.transform = 'translate3d(' + curArrowX + 'px, ' + curArrowY + 'px, 0) scale(' + curScale + ')';
+          cursorPill.style.transform = 'translate3d(' + (curLabelX + P.x) + 'px, ' + (curLabelY + P.y) + 'px, 0) rotate(' + curTilt + 'deg) scale(' + curScale + ')';
+        }
+        requestAnimationFrame(animateCursor);
+      }
+      requestAnimationFrame(animateCursor);
+    })();
+
+
+    // --- 3. Web Audio Engine ---
+    class SoundEngine {
+      constructor() {
+        this.ctx = null;
+        this.enabled = true;
+      }
+      init() {
+        if (!this.ctx) {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          if (AudioContext) this.ctx = new AudioContext();
+        }
+        if (this.ctx && this.ctx.state === 'suspended') this.ctx.resume();
+      }
+      playClick() {
+        if (!this.enabled) return;
+        this.init();
+        if (!this.ctx) return;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        const now = this.ctx.currentTime;
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(320, now);
+        osc.frequency.exponentialRampToValueAtTime(140, now + 0.04);
+        gain.gain.setValueAtTime(0.12, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.045);
+      }
+    }
+    const sounds = new SoundEngine();
+
+    // --- 4. Rotating Roles Animation ---
+    const roles = [
+      'Computer Engineering Student',
+      '4th Year BSCOE @ ICCT Colleges',
+      'Problem Solver & Tech Enthusiast',
+      'Hardware & Systems Learner'
+    ];
+    let roleIdx = 0;
+    const roleElem = document.getElementById('role-text');
+    setInterval(() => {
+      if (!roleElem) return;
+      roleElem.style.opacity = '0';
+      roleElem.style.transform = 'translateY(6px)';
+      setTimeout(() => {
+        roleIdx = (roleIdx + 1) % roles.length;
+        roleElem.textContent = roles[roleIdx];
+        roleElem.style.opacity = '1';
+        roleElem.style.transform = 'translateY(0)';
+      }, 250);
+    }, 2800);
+
+    // --- 5. Theme Toggle with Exact prathm.me Circular Expanding View Transition ---
+    const themeBtn = document.getElementById('theme-btn');
+    const themeMoon = document.getElementById('theme-moon');
+    const themeSun = document.getElementById('theme-sun');
+
+    function updateThemeUI(isDark) {
+      if (themeMoon && themeSun) {
+        themeMoon.style.display = isDark ? 'block' : 'none';
+        themeSun.style.display = isDark ? 'none' : 'block';
+      }
+    }
+
+    function toggleTheme(originX, originY) {
+      sounds.playClick();
+      const doc = document.documentElement;
+      const isDark = doc.classList.contains('dark');
+      const targetDark = !isDark;
+
+      const performThemeChange = () => {
+        if (targetDark) {
+          doc.classList.add('dark');
+        } else {
+          doc.classList.remove('dark');
+        }
+        localStorage.setItem('prathm-theme', targetDark ? 'dark' : 'light');
+        updateThemeUI(targetDark);
+        updateMenuLabels();
+      };
+
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!document.startViewTransition || reducedMotion) {
+        performThemeChange();
+        showToast(targetDark ? 'Dark Theme Enabled 🌙' : 'Light Theme Enabled ☀️');
+        return;
+      }
+
+      // Determine origin coordinates for circular wave
+      let x = originX;
+      let y = originY;
+      if (typeof x !== 'number' || typeof y !== 'number' || (x === 0 && y === 0)) {
+        if (themeBtn) {
+          const rect = themeBtn.getBoundingClientRect();
+          x = rect.left + rect.width / 2;
+          y = rect.top + rect.height / 2;
+        } else {
+          x = window.innerWidth / 2;
+          y = window.innerHeight / 2;
+        }
+      }
+
+      const maxRadius = Math.hypot(
+        Math.max(x, window.innerWidth - x),
+        Math.max(y, window.innerHeight - y)
+      );
+
+      const clipFrom = 'circle(0px at ' + x.toFixed(1) + 'px ' + y.toFixed(1) + 'px)';
+      const clipTo = 'circle(' + maxRadius.toFixed(1) + 'px at ' + x.toFixed(1) + 'px ' + y.toFixed(1) + 'px)';
+
+      doc.dataset.themeVt = 'active';
+      doc.style.setProperty('--theme-vt-clip-from', clipFrom);
+
+      const transition = document.startViewTransition(() => {
+        performThemeChange();
+      });
+
+      const cleanup = () => {
+        delete doc.dataset.themeVt;
+        doc.style.removeProperty('--theme-vt-clip-from');
+      };
+
+      if (transition.finished && typeof transition.finished.finally === 'function') {
+        transition.finished.finally(cleanup).catch(() => {});
+      } else {
+        setTimeout(cleanup, 500);
+      }
+
+      if (transition.ready && typeof transition.ready.then === 'function') {
+        transition.ready.then(() => {
+          doc.animate(
+            { clipPath: [clipFrom, clipTo] },
+            {
+              duration: 450,
+              easing: 'ease-in-out',
+              fill: 'forwards',
+              pseudoElement: '::view-transition-new(root)'
+            }
+          );
+        }).catch(() => {});
+      }
+
+      showToast(targetDark ? 'Dark Theme Enabled 🌙' : 'Light Theme Enabled ☀️');
+    }
+
+    if (themeBtn) {
+      themeBtn.addEventListener('click', (e) => {
+        toggleTheme(e.clientX, e.clientY);
+      });
+    }
+
+    // --- 6. Sound Toggle ---
+    const soundBtn = document.getElementById('sound-btn');
+    const soundIconOn = document.getElementById('sound-icon-on');
+    const soundIconOff = document.getElementById('sound-icon-off');
+
+    if (soundBtn) {
+      soundBtn.addEventListener('click', () => {
+        sounds.enabled = !sounds.enabled;
+        soundIconOn.style.display = sounds.enabled ? 'block' : 'none';
+        soundIconOff.style.display = sounds.enabled ? 'none' : 'block';
+        if (sounds.enabled) {
+          sounds.playClick();
+          showToast('Sound Effects Enabled 🔊');
+        } else {
+          showToast('Sound Effects Muted 🔇');
+        }
+      });
+    }
+
+    // --- 7. Avatar Photo / Sketch Toggle (Exact prathm.me implementation) ---
+    const avatarToggle = document.getElementById('avatar-toggle');
+    const avatarContainer = document.getElementById('avatar-container');
+    const avatarSketch = document.getElementById('avatar-sketch');
+    const avatarPhoto = document.getElementById('avatar-photo');
+    const avatarSwitchDot = document.getElementById('avatar-switch-dot');
+    let showRealPhoto = false;
+
+    function setPhotoState(real) {
+      showRealPhoto = real;
+      if (avatarToggle) {
+        avatarToggle.setAttribute('aria-checked', showRealPhoto ? 'true' : 'false');
+        if (showRealPhoto) {
+          avatarToggle.classList.remove('border-border', 'bg-neutral-200', 'dark:bg-neutral-800');
+          avatarToggle.classList.add('border-transparent', 'bg-neutral-800', 'dark:bg-neutral-200');
+        } else {
+          avatarToggle.classList.add('border-border', 'bg-neutral-200', 'dark:bg-neutral-800');
+          avatarToggle.classList.remove('border-transparent', 'bg-neutral-800', 'dark:bg-neutral-200');
+        }
+      }
+      if (avatarSwitchDot) {
+        avatarSwitchDot.style.left = showRealPhoto ? '15px' : '2px';
+      }
+      if (avatarSketch) {
+        if (showRealPhoto) {
+          avatarSketch.classList.add('opacity-0');
+        } else {
+          avatarSketch.classList.remove('opacity-0');
+        }
+      }
+      if (avatarPhoto) {
+        if (showRealPhoto) {
+          avatarPhoto.classList.remove('opacity-0');
+          avatarPhoto.classList.add('opacity-100');
+          avatarPhoto.setAttribute('aria-hidden', 'false');
+        } else {
+          avatarPhoto.classList.remove('opacity-100');
+          avatarPhoto.classList.add('opacity-0');
+          avatarPhoto.setAttribute('aria-hidden', 'true');
+        }
+      }
+      showToast(showRealPhoto ? 'Showing real photo 📷' : 'Showing illustrated avatar 🎨');
+    }
+
+    if (avatarToggle) {
+      avatarToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        sounds.playClick();
+        setPhotoState(!showRealPhoto);
+      });
+    }
+
+    if (avatarContainer) {
+      avatarContainer.addEventListener('click', () => {
+        sounds.playClick();
+        setPhotoState(!showRealPhoto);
+      });
+    }
+
+    // --- 7b. Cat Mascot Drag-Everywhere Controller ---
+    (function initDraggableCat() {
+      const draggable = document.getElementById('cat-mascot-draggable');
+      const catImg = document.getElementById('cat-mascot-img');
+      const bubble = document.getElementById('cat-speech-bubble');
+      const cursorText = document.getElementById('cursor-pill-text');
+      if (!draggable || !catImg) return;
+
+      let isDragging = false;
+      let startPointerX = 0, startPointerY = 0;
+      let startScrollX = 0, startScrollY = 0;
+      let startPosX = 0, startPosY = 0;
+      let pos = { x: 0, y: 0 };
+      let lastMoveTime = 0, lastClientX = 0;
+      let velocityX = 0;
+      let draggedDistance = 0;
+      let lastTapTime = 0;
+      let autoScrollRaf = 0;
+      let bubbleTimer = 0;
+
+      function updateCursor(text) {
+        if (cursorText) cursorText.textContent = text;
+      }
+
+      function showBubble(duration = 1800) {
+        if (bubble) bubble.classList.add('show');
+        updateCursor('Scubbbaa scob scob!');
+        clearTimeout(bubbleTimer);
+        if (duration > 0) {
+          bubbleTimer = setTimeout(() => {
+            if (!isDragging) {
+              if (bubble) bubble.classList.remove('show');
+              updateCursor('hi');
+            }
+          }, duration);
+        }
+      }
+
+      function autoScroll(clientY) {
+        cancelAnimationFrame(autoScrollRaf);
+        if (!isDragging) return;
+        const edge = 65;
+        const speed = 14;
+        let scrolled = 0;
+        if (clientY < edge) {
+          scrolled = -speed;
+        } else if (clientY > window.innerHeight - edge) {
+          scrolled = speed;
+        }
+        if (scrolled !== 0) {
+          window.scrollBy(0, scrolled);
+          autoScrollRaf = requestAnimationFrame(() => autoScroll(clientY));
+        }
+      }
+
+      function resetToHome() {
+        pos = { x: 0, y: 0 };
+        draggable.style.transition = 'transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        draggable.style.transform = 'translate3d(0, 0, 0)';
+        draggable.classList.remove('is-dragging');
+        sounds.playClick();
+        showBubble(1500);
+        setTimeout(() => {
+          draggable.style.transition = '';
+          draggable.style.zIndex = '';
+        }, 460);
+      }
+
+      draggable.addEventListener('pointerenter', () => {
+        if (!isDragging && (!bubble || !bubble.classList.contains('show'))) {
+          updateCursor('drag me! 🐾');
+        }
+      });
+
+      draggable.addEventListener('pointerleave', () => {
+        if (!isDragging && (!bubble || !bubble.classList.contains('show'))) {
+          updateCursor('hi');
+        }
+      });
+
+      draggable.addEventListener('pointerdown', (e) => {
+        if (e.button !== 0 && e.pointerType === 'mouse') return;
+
+        // Double-tap / double-click detection
+        const now = performance.now();
+        if (now - lastTapTime < 320) {
+          resetToHome();
+          lastTapTime = 0;
+          return;
+        }
+        lastTapTime = now;
+
+        isDragging = true;
+        draggedDistance = 0;
+        startPointerX = e.clientX;
+        startPointerY = e.clientY;
+        startScrollX = window.scrollX;
+        startScrollY = window.scrollY;
+        startPosX = pos.x;
+        startPosY = pos.y;
+        lastClientX = e.clientX;
+        lastMoveTime = now;
+        velocityX = 0;
+
+        try {
+          draggable.setPointerCapture(e.pointerId);
+        } catch (err) {}
+
+        draggable.style.transition = '';
+        draggable.style.zIndex = '9999';
+        draggable.classList.add('is-dragging');
+        showBubble(0); // keep visible while dragging
+        e.preventDefault();
+      });
+
+      draggable.addEventListener('pointermove', (e) => {
+        if (!isDragging) return;
+
+        const now = performance.now();
+        const dt = Math.max(1, now - lastMoveTime);
+        velocityX = (e.clientX - lastClientX) / dt;
+        lastClientX = e.clientX;
+        lastMoveTime = now;
+
+        const currentScrollX = window.scrollX;
+        const currentScrollY = window.scrollY;
+        const dx = (e.clientX - startPointerX) + (currentScrollX - startScrollX);
+        const dy = (e.clientY - startPointerY) + (currentScrollY - startScrollY);
+
+        draggedDistance = Math.hypot(e.clientX - startPointerX, e.clientY - startPointerY);
+
+        pos.x = startPosX + dx;
+        pos.y = startPosY + dy;
+
+        // Dynamic tilt based on dragging direction and velocity
+        const tilt = Math.max(-24, Math.min(24, velocityX * 14));
+        draggable.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0) scale(1.15) rotate(${tilt}deg)`;
+
+        // Check if cursor is near screen edges to auto-scroll
+        autoScroll(e.clientY);
+      });
+
+      function handleDragEnd(e) {
+        if (!isDragging) return;
+        isDragging = false;
+        cancelAnimationFrame(autoScrollRaf);
+
+        try {
+          draggable.releasePointerCapture(e.pointerId);
+        } catch (err) {}
+
+        draggable.classList.remove('is-dragging');
+
+        if (draggedDistance > 6) {
+          // Dropped at new location with a playful landing bounce!
+          draggable.style.transition = 'transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1)';
+          draggable.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0) scale(1) rotate(0deg)`;
+          sounds.playClick();
+          showBubble(1500);
+          setTimeout(() => {
+            draggable.style.transition = '';
+          }, 300);
+        } else {
+          // Just a click/tap: trigger burst punch animation and show message
+          sounds.playClick();
+          showBubble(1800);
+          catImg.style.animation = 'none';
+          void catImg.offsetWidth;
+          catImg.style.animation = 'cat-rapid-punch 0.35s ease-in-out 3';
+          setTimeout(() => {
+            catImg.style.animation = '';
+          }, 1100);
+        }
+      }
+
+      draggable.addEventListener('pointerup', handleDragEnd);
+      draggable.addEventListener('pointercancel', handleDragEnd);
+      draggable.addEventListener('dblclick', resetToHome);
+    })();
+
+    // --- 8. Toast Notifications ---
+    let toastTimer;
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      if (!toast) return;
+      toast.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2200);
+    }
+
+    // --- 9. Email & Copy Triggers ---
+    document.querySelectorAll('.send-email-trigger').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        sounds.playClick();
+        const email = 'onilongosofianaraine@gmail.com';
+        navigator.clipboard.writeText(email).catch(() => {});
+        showToast('Opening Gmail to ' + email + ' ✉️');
+      });
+    });
+
+    document.querySelectorAll('.copy-email-trigger').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        sounds.playClick();
+        const email = btn.getAttribute('data-copy') || 'onilongosofianaraine@gmail.com';
+        navigator.clipboard.writeText(email).then(() => {
+          showToast('Copied: ' + email + ' 📋');
+        }).catch(() => {
+          showToast('Email: ' + email);
+        });
+      });
+    });
+
+    // --- 10. Command Palette Controller (Exact prathm.me implementation) ---
+    const cmdBackdrop = document.getElementById('cmd-backdrop');
+    const cmdModal = document.getElementById('cmd-modal');
+    const cmdInput = document.getElementById('cmd-input');
+    const cmdBtn = document.getElementById('cmd-btn');
+    const mobileCmdBtn = document.getElementById('mobile-cmd-btn');
+    const cmdList = document.getElementById('cmd-list');
+    const cmdEmpty = document.getElementById('cmd-empty');
+    const cmdThemeLabel = document.getElementById('cmd-theme-label');
+    const cmdSoundLabel = document.getElementById('cmd-sound-label');
+    const cmdAvatarLabel = document.getElementById('cmd-avatar-label');
+    let selectedIdx = 0;
+
+    function getVisibleItems() {
+      return Array.from(document.querySelectorAll('.cmd-item')).filter(el => el.style.display !== 'none');
+    }
+
+    function updateSelection(items, newIdx) {
+      items.forEach(el => el.classList.remove('selected'));
+      if (items.length > 0) {
+        selectedIdx = Math.max(0, Math.min(items.length - 1, newIdx));
+        items[selectedIdx].classList.add('selected');
+        items[selectedIdx].scrollIntoView({ block: 'nearest' });
+      }
+    }
+
+    function updateMenuLabels() {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (cmdThemeLabel) cmdThemeLabel.textContent = isDark ? 'Switch to light theme' : 'Switch to dark theme';
+      if (cmdSoundLabel) cmdSoundLabel.textContent = sounds.enabled ? 'Turn off interface sound' : 'Turn on interface sound';
+      if (cmdAvatarLabel) cmdAvatarLabel.textContent = showRealPhoto ? 'Show illustrated avatar' : 'Show real photo';
+      if (cmdFontLabel) cmdFontLabel.textContent = fullSiteFont ? 'Silk Flower: Headings only' : 'Silk Flower: Apply to full site';
+    }
+
+    function openCmd() {
+      sounds.playClick();
+      updateMenuLabels();
+      if (cmdBackdrop) {
+        cmdBackdrop.style.display = 'flex';
+        requestAnimationFrame(() => {
+          cmdBackdrop.classList.add('open');
+        });
+      }
+      if (cmdInput) {
+        cmdInput.value = '';
+        filterCmd('');
+        setTimeout(() => cmdInput.focus(), 60);
+      }
+    }
+
+    function closeCmd() {
+      if (cmdBackdrop) {
+        cmdBackdrop.classList.remove('open');
+        setTimeout(() => {
+          cmdBackdrop.style.display = 'none';
+        }, 160);
+      }
+    }
+
+    function filterCmd(query) {
+      const q = query.trim().toLowerCase();
+      let totalVisible = 0;
+
+      document.querySelectorAll('.cmd-group').forEach(group => {
+        let groupVisible = 0;
+        group.querySelectorAll('.cmd-item').forEach(item => {
+          const text = (item.getAttribute('data-text') || '') + ' ' + item.textContent.toLowerCase();
+          const match = !q || text.includes(q);
+          item.style.display = match ? 'flex' : 'none';
+          if (match) {
+            groupVisible++;
+            totalVisible++;
+          }
+        });
+        group.style.display = groupVisible > 0 ? 'block' : 'none';
+      });
+
+      // Update divider lines between groups
+      document.querySelectorAll('#cmd-list > .h-px').forEach(divider => {
+        divider.style.display = totalVisible > 0 && !q ? 'block' : 'none';
+      });
+
+      if (cmdEmpty) {
+        cmdEmpty.style.display = totalVisible === 0 ? 'block' : 'none';
+      }
+
+      const visible = getVisibleItems();
+      updateSelection(visible, 0);
+    }
+
+    if (cmdBtn) cmdBtn.addEventListener('click', openCmd);
+    if (mobileCmdBtn) mobileCmdBtn.addEventListener('click', openCmd);
+
+    if (cmdBackdrop) {
+      cmdBackdrop.addEventListener('click', (e) => {
+        if (e.target === cmdBackdrop) closeCmd();
+      });
+    }
+
+    if (cmdInput) {
+      cmdInput.addEventListener('input', (e) => {
+        filterCmd(e.target.value);
+      });
+
+      cmdInput.addEventListener('keydown', (e) => {
+        const visible = getVisibleItems();
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          updateSelection(visible, selectedIdx + 1);
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          updateSelection(visible, selectedIdx - 1);
+        } else if (e.key === 'Enter') {
+          e.preventDefault();
+          if (visible[selectedIdx]) {
+            visible[selectedIdx].click();
+          }
+        }
+      });
+    }
+
+    // Modal action handlers
+    const cmdThemeBtn = document.getElementById('cmd-toggle-theme');
+    if (cmdThemeBtn) {
+      cmdThemeBtn.addEventListener('click', (e) => {
+        closeCmd();
+        toggleTheme(e.clientX, e.clientY);
+      });
+    }
+
+    const cmdSoundBtn = document.getElementById('cmd-toggle-sound');
+    if (cmdSoundBtn) {
+      cmdSoundBtn.addEventListener('click', () => {
+        closeCmd();
+        if (soundBtn) soundBtn.click();
+      });
+    }
+
+    const cmdAvatarBtn = document.getElementById('cmd-toggle-avatar');
+    if (cmdAvatarBtn) {
+      cmdAvatarBtn.addEventListener('click', () => {
+        closeCmd();
+        if (avatarToggle) avatarToggle.click();
+      });
+    }
+
+    const cmdFontBtn = document.getElementById('cmd-toggle-font');
+    const cmdFontLabel = document.getElementById('cmd-font-label');
+    let fullSiteFont = localStorage.getItem('silk_flower_full') === 'true';
+
+    function applyFontMode(isFull) {
+      if (isFull) {
+        document.body.classList.add('silk-flower-full');
+      } else {
+        document.body.classList.remove('silk-flower-full');
+      }
+      localStorage.setItem('silk_flower_full', isFull ? 'true' : 'false');
+      if (cmdFontLabel) {
+        cmdFontLabel.textContent = isFull ? 'Silk Flower: Headings only' : 'Silk Flower: Apply to full site';
+      }
+    }
+    applyFontMode(fullSiteFont);
+
+    if (cmdFontBtn) {
+      cmdFontBtn.addEventListener('click', () => {
+        fullSiteFont = !fullSiteFont;
+        applyFontMode(fullSiteFont);
+        closeCmd();
+      });
+    }
+
+    document.querySelectorAll('.cmd-item').forEach(item => {
+      item.addEventListener('click', () => {
+        sounds.playClick();
+        closeCmd();
+      });
+    });
+
+    // Global keyboard shortcuts (Exact prathm.me behavior)
+    window.addEventListener('keydown', (e) => {
+      const isInput = ['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName);
+      
+      // Cmd/Ctrl + K or S (for ⌘SN)
+      if ((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === 'k' || e.key.toLowerCase() === 's')) {
+        e.preventDefault();
+        if (cmdBackdrop && cmdBackdrop.classList.contains('open')) {
+          closeCmd();
+        } else {
+          openCmd();
+        }
+      } else if (e.key === 'Escape') {
+        closeCmd();
+      } else if (!isInput && (e.key === 'd' || e.key === 'D')) {
+        // 'd' toggles theme like prathm.me
+        toggleTheme();
+      }
+    });
+
+    document.querySelectorAll('button, a').forEach(el => {
+      el.addEventListener('click', () => {
+        sounds.playClick();
+      });
+    });
+
+    // --- 11. Magnetic Button Physics (Exact algorithm and spring solver from prathm.me) ---
+    function initMagneticButtons() {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const buttons = document.querySelectorAll('.magnetic-btn');
+
+      buttons.forEach(btn => {
+        const inner = btn.querySelector('.magnetic-inner');
+        if (!inner) return;
+
+        let r = 0; // requestAnimationFrame ID
+        let lastTime = performance.now();
+        let currentX = 0, currentY = 0;
+        let velX = 0, velY = 0;
+        let targetX = 0, targetY = 0;
+
+        const loop = (now) => {
+          const dt = Math.min((now - lastTime) / 1000, 0.032);
+          lastTime = now;
+          const drag = Math.exp(-13.5 * dt);
+          velX = (velX + (targetX - currentX) * 105 * dt) * drag;
+          velY = (velY + (targetY - currentY) * 105 * dt) * drag;
+          currentX += velX * dt;
+          currentY += velY * dt;
+
+          inner.style.transform = 'translate3d(' + currentX.toFixed(2) + 'px, ' + currentY.toFixed(2) + 'px, 0)';
+
+          if (Math.abs(targetX - currentX) < 0.02 &&
+              Math.abs(targetY - currentY) < 0.02 &&
+              Math.abs(velX) < 0.02 &&
+              Math.abs(velY) < 0.02) {
+            r = 0;
+          } else {
+            r = requestAnimationFrame(loop);
+          }
+        };
+
+        const startAnim = () => {
+          if (!r) {
+            lastTime = performance.now();
+            r = requestAnimationFrame(loop);
+          }
+        };
+
+        const reset = () => {
+          targetX = 0;
+          targetY = 0;
+          startAnim();
+        };
+
+        const onPointerMove = (e) => {
+          if (e.pointerType !== 'mouse' || reducedMotion.matches) {
+            if (r) cancelAnimationFrame(r);
+            r = 0;
+            currentX = currentY = velX = velY = targetX = targetY = 0;
+            inner.style.transform = 'translate3d(0, 0, 0)';
+            return;
+          }
+
+          const btnRect = btn.getBoundingClientRect();
+          const innerRect = inner.getBoundingClientRect();
+          const dx = e.clientX - (btnRect.left + btnRect.width / 2);
+          const dy = e.clientY - (btnRect.top + btnRect.height / 2);
+          const dist = Math.hypot(dx, dy);
+          const radius = Math.max(btnRect.width, btnRect.height) + 42;
+
+          if (dist >= radius) {
+            reset();
+            return;
+          }
+
+          // Bounded magnetic range based on button dimensions so content floats naturally
+          const boundX = Math.max(4, (btnRect.width - innerRect.width) / 2 + 1);
+          const boundY = Math.max(3, (btnRect.height - innerRect.height) / 2 + 1);
+          const pull = 0.28 * (1 - dist / radius);
+
+          targetX = Math.max(-boundX, Math.min(boundX, dx * pull));
+          targetY = Math.max(-boundY, Math.min(boundY, dy * pull));
+          startAnim();
+        };
+
+        window.addEventListener('pointermove', onPointerMove, { passive: true });
+        window.addEventListener('blur', reset);
+        btn.addEventListener('mouseleave', reset);
+      });
+    }
+
+    initMagneticButtons();
+
+    /* --- GitHub Activity Status & Dynamic Heatmap --- */
+    function initGitHubActivity() {
+      const grid = document.getElementById('github-heatmap-grid');
+      const monthsRow = document.getElementById('github-months-row');
+      const totalText = document.getElementById('github-total-contributions');
+      const pushText = document.getElementById('github-latest-push-text');
+      const hoverInfo = document.getElementById('github-hover-info');
+      if (!grid) return;
+
+      const now = new Date();
+      // Use midday local time to prevent DST/timezone shifting
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 0, 0);
+
+      // Level color styling matching GitHub's emerald green palette in dark & light modes
+      const levelClasses = [
+        'bg-neutral-200/80 dark:bg-neutral-800/80',
+        'bg-emerald-400/60 dark:bg-emerald-900',
+        'bg-emerald-500/80 dark:bg-emerald-700',
+        'bg-emerald-500 dark:bg-emerald-500',
+        'bg-emerald-600 dark:bg-emerald-400'
+      ];
+
+      const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+      // Known fallback baseline
+      const fallbackData = {
+        '2026-10-08': { count: 1, level: 4 },
+        '2026-10-13': { count: 1, level: 4 }
+      };
+
+      function renderGrid(contributionsMap, totalCount) {
+        if (totalText && typeof totalCount === 'number') {
+          totalText.textContent = totalCount + ' contribution' + (totalCount === 1 ? '' : 's') + ' in the last year';
+        }
+
+        const dayOfWeek = today.getDay(); // 0 is Sun, 6 is Sat
+        const totalWeeks = 52;
+        const daysBefore = (totalWeeks - 1) * 7 + dayOfWeek;
+        const startDate = new Date(today);
+        startDate.setDate(today.getDate() - daysBefore);
+
+        grid.innerHTML = '';
+        if (monthsRow) monthsRow.innerHTML = '';
+
+        let lastMonth = -1;
+        let lastColPlaced = -10;
+        const curDate = new Date(startDate);
+
+        for (let w = 0; w < totalWeeks; w++) {
+          const col = document.createElement('div');
+          col.className = 'flex flex-col gap-[3px]';
+
+          let colMonth = -1;
+
+          for (let d = 0; d < 7; d++) {
+            if (curDate > today) {
+              const placeholder = document.createElement('div');
+              placeholder.className = 'size-2.5 rounded-[2px] opacity-0 pointer-events-none';
+              col.appendChild(placeholder);
+              curDate.setDate(curDate.getDate() + 1);
+              continue;
+            }
+
+            const y = curDate.getFullYear();
+            const m = String(curDate.getMonth() + 1).padStart(2, '0');
+            const day = String(curDate.getDate()).padStart(2, '0');
+            const dateStr = y + '-' + m + '-' + day;
+
+            if (d === 0) {
+              colMonth = curDate.getMonth();
+            }
+
+            const contrib = contributionsMap[dateStr] || { count: 0, level: 0 };
+            const count = contrib.count;
+            const level = Math.min(4, Math.max(0, contrib.level || (count > 0 ? (count > 3 ? 4 : count) : 0)));
+
+            const cell = document.createElement('div');
+            cell.className = 'size-2.5 rounded-[2px] transition-transform duration-100 hover:scale-125 cursor-pointer ' + (levelClasses[level] || levelClasses[0]);
+            
+            const formattedDate = curDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            const tooltipStr = count > 0
+              ? count + ' contribution' + (count > 1 ? 's' : '') + ' on ' + formattedDate
+              : 'No contributions on ' + formattedDate;
+
+            cell.setAttribute('title', tooltipStr);
+            cell.setAttribute('aria-label', tooltipStr);
+
+            if (hoverInfo) {
+              cell.addEventListener('mouseenter', () => {
+                hoverInfo.textContent = tooltipStr;
+                hoverInfo.classList.remove('opacity-70');
+                hoverInfo.classList.add('text-foreground', 'font-medium');
+              });
+              cell.addEventListener('mouseleave', () => {
+                hoverInfo.textContent = 'Hover a square to view details';
+                hoverInfo.classList.add('opacity-70');
+                hoverInfo.classList.remove('text-foreground', 'font-medium');
+              });
+            }
+
+            col.appendChild(cell);
+            curDate.setDate(curDate.getDate() + 1);
+          }
+
+          grid.appendChild(col);
+
+          if (monthsRow && colMonth !== -1 && colMonth !== lastMonth && (w - lastColPlaced >= 3) && (w < totalWeeks - 2)) {
+            const mLabel = document.createElement('span');
+            mLabel.className = 'absolute text-[9px] font-mono leading-none';
+            mLabel.style.left = (w * 13) + 'px';
+            mLabel.textContent = monthNames[colMonth];
+            monthsRow.appendChild(mLabel);
+            lastMonth = colMonth;
+            lastColPlaced = w;
+          }
+        }
+      }
+
+      // 1. Instant synchronous render with known baseline (zero layout shift)
+      renderGrid(fallbackData, 2);
+
+      // 2. Asynchronous live sync with GitHub Contributions API
+      fetch('https://github-contributions-api.jogruber.de/v4/onilongosofianaraine?y=last')
+        .then(function(res) {
+          if (!res.ok) throw new Error('Network response not ok');
+          return res.json();
+        })
+        .then(function(data) {
+          if (!data || !Array.isArray(data.contributions)) return;
+          const map = {};
+          data.contributions.forEach(function(item) {
+            map[item.date] = { count: item.count, level: item.level };
+          });
+          const total = data.total && typeof data.total.lastYear === 'number' ? data.total.lastYear : 2;
+          renderGrid(map, total);
+        })
+        .catch(function(err) {
+          console.debug('Live contributions sync note:', err);
+        });
+
+      // 3. Asynchronous live sync of latest commit push timestamp
+      fetch('https://api.github.com/repos/onilongosofianaraine/github-portfoloi')
+        .then(function(res) {
+          if (!res.ok) throw new Error('Repo fetch not ok');
+          return res.json();
+        })
+        .then(function(repo) {
+          if (repo && pushText && (repo.pushed_at || repo.updated_at)) {
+            const d = new Date(repo.pushed_at || repo.updated_at);
+            const dateStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            pushText.textContent = 'Pushed ' + dateStr;
+          }
+        })
+        .catch(function() {});
+    }
+
+    initGitHubActivity();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "sofia-naraine-portfolio-prathm",
+  "version": "1.0.0",
+  "description": "Minimalist developer portfolio for Sofia Naraine J. Onilongo inspired by prathm.me",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -l 3000",
+    "dev": "npx serve -l 3000"
+  },
+  "author": "Sofia Naraine J. Onilongo",
+  "license": "MIT"
+}
